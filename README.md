@@ -1,11 +1,6 @@
 # Zeek Threat Intel Feed Parser
 This script parses line-separated indicators from an input file and exports them to an output file in the intelligence data format. You can either run the script manually and enter the required parameters when prompted or pass it parameters if you want to automate the process.
 
-Jump To:
-
-* [Getting Started](https://github.com/CriticalPathSecurity/zeek-threat-intel-parser#getting-started)
-* [Usage](https://github.com/CriticalPathSecurity/zeek-threat-intel-parser#usage)
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running.
