@@ -45,14 +45,14 @@ And then run the parser using one of the following options
 python3 parser.py
 ```
 
+The script will prompt you to enter the required data; indicator type, source and description, as well as the absolute paths to the input and output files.
+
 ### Automated Usage
 
 You can also pass arguments directly to the script and bypass user input which allows you to automate the parsing.
 
-Example CRON job to run every nth minute
-
 ```
-*/N * * * * python3 /opt/zeek-threat-intel-parser/parser.py type source description /input/file/path /output/file/path
+python3 parser.py type source description /opt/zeek-threat-intel-parser/input/sample.txt /opt/zeek-threat-intel-parser/output/sample.intel
 ```
 
 ### Output Format
