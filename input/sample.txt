@@ -1,0 +1,5 @@
+google.com
+microsoft.com
+amazon.com
+yahoo.com
+bing.com
