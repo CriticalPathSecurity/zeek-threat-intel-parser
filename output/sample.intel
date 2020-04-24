@@ -1,0 +1,6 @@
+#fields	indicator	indicator_type	meta.source	meta.do_notice	meta.desc
+google.com	Intel::type	source	F	description
+microsoft.com	Intel::type	source	F	description
+amazon.com	Intel::type	source	F	description
+yahoo.com	Intel::type	source	F	description
+bing.com	Intel::type	source	F	description
