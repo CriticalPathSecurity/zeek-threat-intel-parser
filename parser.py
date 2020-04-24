@@ -36,7 +36,7 @@ def main(args, use_input = True):
 
         # Check to make sure all arguments are present
         if len(args) < 5:
-            print('\n')
+            print('')
             print('Only '+str(len(args))+' arguments were present but 5 are required.')
             print('Please check the README for complete usage instructions.', end='\n\n')
             return
@@ -51,7 +51,7 @@ def main(args, use_input = True):
 
     # Else, set the required data based on the passed arguments
     else:
-        print('\n')
+        print('')
         indicator_type = input('Enter the indicator type : ')
         source = input('Enter the source : ')
         description = input('Enter the description : ')
@@ -60,7 +60,7 @@ def main(args, use_input = True):
 
     # Check to see if the input file exists
     if not path.exists(input_file):
-        print('\n')
+        print('')
         print('Can\'t read from the input file.')
         print('Does it exist? Do you have read permission?', end='\n\n')
         return
@@ -81,13 +81,13 @@ def main(args, use_input = True):
         outfile.close()
 
     except IOError:
-        print('\n')
+        print('')
         print('Can\'t write to the output file.')
         print('Do you have write permission for the path specified?', end='\n\n')
         return
 
     finally:
-        print('\n')
+        print('')
         print('Finished!')
         print('You can find your output file here:')
         print(output_file, end='\n\n')
