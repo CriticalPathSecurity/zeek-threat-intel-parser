@@ -1,15 +1,14 @@
 #!/usr/local/bin/python3
-# .____
-# |   |    ____ _____ _______  _________    _____
-# |   |  _/ __ \\__  \\_  __ \/ ___\__  \  /  ___/
-# |   |__\  ___/ / __ \|  | \/ /_/  > __ \_\___ \
-# |______ \___  >____  /__|  \___  (____  /____  >
-#        \/   \/     \/     /_____/     \/     \/
-#    Actionable Insight Into Converging Threats
+# _________        .__  __  .__              .__ __________         __  .__
+# \_   ___ \_______|__|/  |_|__| ____ _____  |  |\______   \_____ _/  |_|  |__
+# /    \  \/\_  __ \  \   __\  |/ ___\\__  \ |  | |     ___/\__  \\   __\  |  \
+# \     \____|  | \/  ||  | |  \  \___ / __ \|  |_|    |     / __ \|  | |   Y  \
+#  \______  /|__|  |__||__| |__|\___  >____  /____/____|    (____  /__| |___|  /
+#        \/                        \/     \/                    \/          \/
 #
 # @author      Brandon Cummings <brandon.cummings@criticalpathsecurity.com>
-# @copyright   2020 Léargas Security, Inc.
-# @link        https://leargassecurity.com
+# @copyright   2020 Critical Path Security
+# @link        https://www.criticalpathsecurity.com/
 # @license     MIT License
 #
 # This script parses line-separated indicators from an input file and exports
@@ -26,7 +25,7 @@ from os import path
 # There are two ways to use this script; by passing arguments or entering the
 # required information manually when prompted. If arguments are used, input
 # prompts are suppressed.
-def main(args, e = None, use_input = True):
+def main(args, use_input = True):
 
     # Strip the filename from the args
     args.pop(0)
@@ -37,8 +36,9 @@ def main(args, e = None, use_input = True):
 
         # Check to make sure all arguments are present
         if len(args) < 5:
+            print('\n')
             print('Only '+str(len(args))+' arguments were present but 5 are required.')
-            print('Please check the README for complete usage instructions.')
+            print('Please check the README for complete usage instructions.', end='\n\n')
             return
 
     # If input is True, prompt the user for the required information
@@ -51,6 +51,7 @@ def main(args, e = None, use_input = True):
 
     # Else, set the required data based on the passed arguments
     else:
+        print('\n')
         indicator_type = input('Enter the indicator type : ')
         source = input('Enter the source : ')
         description = input('Enter the description : ')
@@ -59,8 +60,9 @@ def main(args, e = None, use_input = True):
 
     # Check to see if the input file exists
     if not path.exists(input_file):
+        print('\n')
         print('Can\'t read from the input file.')
-        print('Does it exist? Do you have read permission?')
+        print('Does it exist? Do you have read permission?', end='\n\n')
         return
 
     # Try to open the input and output files
@@ -79,8 +81,16 @@ def main(args, e = None, use_input = True):
         outfile.close()
 
     except IOError:
+        print('\n')
         print('Can\'t write to the output file.')
-        print('Do you have write permission for the path specified?')
+        print('Do you have write permission for the path specified?', end='\n\n')
+        return
+
+    finally:
+        print('\n')
+        print('Finished!')
+        print('You can find your output file here:')
+        print(output_file, end='\n\n')
         return
 
 # Execute the main function
